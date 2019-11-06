@@ -1,10 +1,13 @@
 import React from "react";
-import {Container, Box} from "bloomer";
+import {Container, Box, MenuList} from "bloomer";
+
 const Wrapper = props =>{
     return(
         <Container>
-            <Box>{props.children}</Box>
+            <Box><MenuList>{props.children}</MenuList></Box>
         </Container>
     )
 }
+
 export default Wrapper;
+

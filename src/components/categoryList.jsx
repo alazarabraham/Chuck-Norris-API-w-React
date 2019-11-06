@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
+import {Progress} from "bloomer";
 
 import {loadData} from "../utils/loadData";
 
@@ -8,9 +9,13 @@ class CategoryList extends Component{
         categories: []
     }
     async componentDidMount(){
+        this.getCategories();
+        
+    }
+    getCategories = async () => {
         const categories = await loadData(
             `https://api.chucknorris.io/jokes/categories`
-        )
+        );
         this.setState({
             categories
         })
@@ -19,14 +24,16 @@ class CategoryList extends Component{
         const {categories} = this.state;
         return (
             <ul>
-            {categories.map((category, id)=>{
+            <Progress isColor="danger" progress-indeterminate-duration="3000s"></Progress>
+
+            {categories.map((category, id) =>{
                return (
                <li key={'category-${id}'}>
                     <Link to={`/category/${category}`}>{category}</Link>
                 </li>
+
                )
-            }
-            )}
+            })}
             </ul>
         );
     }

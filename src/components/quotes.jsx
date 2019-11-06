@@ -20,8 +20,10 @@ class Quote extends Component{
     
     };
     handleClick= e =>{
+        const category = this.props.match.params.category_name;
+
         e.preventDefault();
-        this.getQuote();
+        this.getQuote(category);
     }
   
     render(){
