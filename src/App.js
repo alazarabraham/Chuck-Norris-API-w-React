@@ -5,16 +5,17 @@ import Quote from "./components/quotes";
 import CategoryList from "./components/categoryList";
 import './App.css';
 import "bulma/css/bulma.css";
+import {Button} from "bloomer";
 
 function App() {
     return(
     <div className="App">
       <Router>
-        <Wrapper>
+        <Wrapper isColor="dark">
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/"><Button isColor="danger">Home</Button></Link>
             </li>
           </ul>
         </nav>

@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
-import {Progress} from "bloomer";
+import {Progress, Button} from "bloomer";
+
 
 import {loadData} from "../utils/loadData";
 
@@ -29,7 +30,7 @@ class CategoryList extends Component{
             {categories.map((category, id) =>{
                return (
                <li key={'category-${id}'}>
-                    <Link to={`/category/${category}`}>{category}</Link>
+                   <Link isColor="danger" to={`/category/${category}`}>{category}</Link>
                 </li>
 
                )

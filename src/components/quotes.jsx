@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import {loadData} from "../utils/loadData";
-import {Button} from "bloomer";
+import {Button, Notification} from "bloomer";
+import "./quotescss.css";
 class Quote extends Component{
     state = {
         quote: "Fetching quotes..."
@@ -32,8 +33,8 @@ class Quote extends Component{
         const category = this.props.match.params.category_name;
         return (
         <>
-        <p>{quote}</p>
-        <Button isColor="warning" isSize="medium" onClick={(e)=> this.handleClick(e)}>Get Another Quote {category}</Button>
+        <Notification isColor="success" id="card">{quote}</Notification>
+        <Button isColor="warning" isSize="medium"  onClick={(e)=> this.handleClick(e)}>Get Another Quote {category}</Button>
         </>
         );
         
